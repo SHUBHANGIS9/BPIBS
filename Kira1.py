@@ -262,7 +262,7 @@ class ArticleApp(MDApp):
         except Exception as e:
             self.update_labels('Error fetching article', '', str(e))
     def text_to_speech(self, instance):
-        """Reads the title and summary using Azure's Text-to-Speech."""
+        """Reads the title, summary, credibility, and sentiment using Azure's Text-to-Speech."""
         title_text = self.title_label.text.replace('Title: ', '').strip()
         summary_text = self.summary_label.text.replace('Summary: ', '').strip()
         sentiment_text = self.sentiment_label.text.replace('Sentiment: ', '').strip()
@@ -274,8 +274,10 @@ class ArticleApp(MDApp):
 
         try:
             # Construct the speech text
-            speech_text = f"The summary for the news title {title_text} is: {summary_text}"
-            f"The sentiment is {sentiment_text} and the credibility is {credibility_text}."
+            speech_text = (
+                f"The summary for the news title {title_text} is: {summary_text}. "
+                f"The sentiment is {sentiment_text} and the credibility is {credibility_text}."
+            )
 
             # Configure Azure Speech
             speech_config = speechsdk.SpeechConfig(
@@ -300,6 +302,7 @@ class ArticleApp(MDApp):
 
         except Exception as e:
             print(f"Error in TTS: {e}")
+
 
 
 
