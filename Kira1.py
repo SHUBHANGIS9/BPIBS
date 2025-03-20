@@ -24,8 +24,8 @@ nltk.download('punkt')
 # Set screen size to mimic a phone size
 Window.size = (400, 600)
 # Azure Speech Service Key and Region (Replace with actual values)
-AZURE_SPEECH_KEY = "A9Jwlb4mK7wFu9tEumTFnDE2W0vrQeEpciHfDFha2juGbckFCCmgJQQJ99BCACYeBjFXJ3w3AAAYACOG5Foz"  # Replace with your Azure key
-AZURE_SPEECH_REGION = "eastus"  # Replace with your Azure region
+AZURE_SPEECH_KEY = "Add your key"  # Replace with your Azure key
+AZURE_SPEECH_REGION = "add your location"  # Replace with your Azure region
 
 # Database Initialization
 def init_db():
